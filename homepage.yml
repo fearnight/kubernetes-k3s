@@ -30,6 +30,11 @@ spec:
         image: ghcr.io/gethomepage/homepage:latest
         ports:
         - containerPort: 3000
+        env: 
+        - name: HOSTNAME
+          value: "0.0.0.0"
+        - name: PORT
+          value: "3000"
         volumeMounts:
         - mountPath: /app/config
           name: storage
