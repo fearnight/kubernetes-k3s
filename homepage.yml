@@ -54,7 +54,7 @@ spec:
     app: homepage
   ports:
     - protocol: TCP
-      port: 3000
+      port: 80
       targetPort: 3000
 
 ---
@@ -74,4 +74,4 @@ spec:
           service:
             name: homepage-service 
             port:
-              number: 3000
+              number: 80
