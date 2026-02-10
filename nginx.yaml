@@ -1,11 +1,9 @@
----
-# 1. El Deployment: Define QUÉ queremos correr (la "Receta")
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
 spec:
-  replicas: 2  # <--- MAGIA: Queremos 2 copias idénticas siempre
+  replicas: 2  
   selector:
     matchLabels:
       app: nginx
@@ -21,7 +19,7 @@ spec:
         - containerPort: 80
 
 ---
-# 2. El Service: Define CÓMO entramos (la "Puerta")
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,6 +29,18 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-      port: 8080      # Puerto externo (donde tú llamarás)
-      targetPort: 80  # Puerto interno del contenedor
-  type: LoadBalancer  # K3s tiene un "truco" para que esto funcione en local
+      port: 8080      
+      targetPort: 80  
+  type: LoadBalancer  
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: homepage-service
+spec:
+  selector:
+    app: homepage
+  ports:
+    - protocol: TCP
+      port: 3000
+  type: LoadBalancer  
