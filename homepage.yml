@@ -31,6 +31,8 @@ spec:
         ports:
         - containerPort: 3000
         env: 
+        - name: HOMEPAGE_ALLOWED_HOSTS
+          value: "home.local,10.42.0.0/16,10.43.0.0/16,localhost"
         - name: HOSTNAME
           value: "0.0.0.0"
         - name: PORT
