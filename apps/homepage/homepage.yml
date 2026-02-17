@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: homepage-deploy
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels: 
       app: homepage
