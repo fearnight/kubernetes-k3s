@@ -44,6 +44,9 @@ spec:
       - name: storage
         persistentVolumeClaim:
           claimName: homepage-pvc
+      - name: config-volume
+        configMap:
+          name: homepage-config
 
 ---
 

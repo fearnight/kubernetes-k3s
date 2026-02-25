@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+data:
+  services.yaml: |
+    - Mi Servidor:
+        - ArgoCD:
+            href: http://192.168.0.20:31999
+            description: Panel de GitOps
+        - Grafana:
+            href: http://192.168.0.20:3001
+            description: Monitorización del clúster
+    # (Pega aquí el resto de tus servicios antiguos)
+
+  widgets.yaml: |
+    - search:
+        provider: google
+        target: _blank
+    # (Pega aquí tus widgets)
