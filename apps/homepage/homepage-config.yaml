@@ -11,7 +11,6 @@ data:
         - Grafana:
             href: http://192.168.0.20:3001
             description: Monitorización del clúster
-    # (Pega aquí el resto de tus servicios antiguos)
 
   widgets.yaml: |
     - search:
